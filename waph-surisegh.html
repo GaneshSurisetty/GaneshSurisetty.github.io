@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Programming and Hacking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* CSS for styling */
+        body {
+            background-color: #f6f8fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            background-color: #dfcf66;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+        }
+
+        header .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .nav-link {
+            color: #ffffff !important;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        header .nav-link:hover {
+            color: #007bff !important;
+        }
+
+        main {
+            padding-top: 100px;
+        }
+        
+        .flag-counter {
+            position: absolute;
+            top: 5px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
+        }
+
+
+        .joke-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .joke-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .clock-container {
+            margin-top: 50px; /* Adjust margin as needed */
+            text-align: center;
+        }
+
+        .digital-clock{
+            vertical-align: top; /* Align clocks to the top */
+        }
+
+        .analog-clock {
+            vertical-align: top; /* Align clocks to the top */
+        }
+
+        .email-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        #email {
+            display: none;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .math-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 50px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            bottom: 0;
+            width: 100%;
+            position: fixed; /* Fixed position */
+            padding: 5px 0; /* Added padding */
+            height: 80px; /* Set the height of the footer */
+        }
+
+        .second-webpage {
+            text-align: center;
+            margin-top: 100px; /* Adjust as needed for vertical alignment */
+            margin-bottom: 200px; /* Add some margin at the bottom */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <!-- Web Programming and Hacking -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand text-center w-100">Web Programming and Hacking</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Joke API Integration -->
+        <div class="container joke-container">
+            <h2>Joke</h2>
+            <div id="response"></div>
+        </div>
+        <hr>
+
+        <!-- Image Display -->
+        <div class="container image-container">
+            <h2>Random NASA Image</h2>
+            <img id="nasa-image" class="image" src="" alt="NASA Image">
+            <div><button id="btn-next-image" class="btn btn-primary mt-3">Next Image</button></div>
+        </div>
+        <hr>
+
+        <!-- Clocks -->
+        <div class="container clock-container">
+            <div class="digital-clock">
+                <h2>Digital Clock</h2>
+                <p id="digital-clock">Loading...</p>
+            </div>
+            <div class="analog-clock">
+                <h2>Analog Clock</h2>
+                <canvas id="analog-clock" width="200" height="200"></canvas>
+            </div>
+        </div>
+        <hr>
+
+
+        <!-- Email Show/Hide -->
+        <div class="container email-container">
+            <h2>Email</h2>
+            <button id="toggle-email" class="btn btn-primary">Show/Hide Email</button>
+            <p id="email">surisegh@mail.uc.edu</p>
+        </div>
+        <hr>
+
+
+        <!-- Math Calculation -->
+        <div class="container math-container">
+            <h2>Math Calculation</h2>
+            <p id="question"></p>
+            <input type="text" id="user-answer" placeholder="Enter your answer">
+            <button id="btn-check-answer" class="btn btn-primary">Check Answer</button>
+            <p id="result-message"></p>
+        </div>
+        <hr>
+
+
+         <!-- About second web page-->
+        <div class="container second-webpage">
+                        <p>Click on the below link to navigate to the profile page:</p>
+                        <p><a href="file:///Users/harshashetty/Documents/Masters%20in%20IT/Second%20Sem/Topics%20in%20CS/Personal%20Project%201/sample.html#headshot">Ganesh Surisetty web page</a></p>
+        </div>
+
+    </main>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        $(document).ready(function() {
+
+            // Joke API Integration
+            function displayJoke() {
+                $.get("https://v2.jokeapi.dev/joke/programming?type=single", function(result) {
+                    console.log("From jokeAPI: " + JSON.stringify(result));
+                    $("#response").html("A Programming Joke: " + result.joke);
+                }).fail(function() {
+                    $("#response").html("Failed to fetch joke.");
+                });
+            }
+            displayJoke(); // Initial call
+            setInterval(displayJoke, 60000); // Update every minute
+
+            // Function to fetch a random NASA image
+            function fetchRandomNASAImage() {
+                $.getJSON("https://images-api.nasa.gov/search?media_type=image", function(data) {
+                    // Check if any images were returned
+                    if (data.collection.items.length > 0) {
+                        // Get a random image from the collection
+                        var randomIndex = Math.floor(Math.random() * data.collection.items.length);
+                        var imageUrl = data.collection.items[randomIndex].links[0].href;
+                        // Display the image
+                        $("#nasa-image").attr("src", imageUrl);
+                    } else {
+                        $("#nasa-image").attr("src", "https://via.placeholder.com/400?text=No+image+found");
+                    }
+                }).fail(function() {
+                    $("#nasa-image").attr("src", "https://via.placeholder.com/400?text=Failed+to+fetch+image");
+                });
+            }
+
+            // Initial call to fetch a random NASA image
+            fetchRandomNASAImage();
+
+            // Event listener for the "Next Image" button
+            $("#btn-next-image").click(function() {
+                fetchRandomNASAImage();
+            })
+
+            // Digital Clock
+            function updateDigitalClock() {
+                var now = new Date();
+                var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                var amOrPm = hours < 12 ? 'AM' : 'PM';
+                hours = hours < 10 ? '0' + hours : hours;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                var timeString = hours + ':' + minutes + ':' + seconds + ' ' + amOrPm;
+                $('#digital-clock').text(timeString);
+            }
+            updateDigitalClock(); // Initial call
+            setInterval(updateDigitalClock, 1000); // Update every second
+
+            // Analog Clock
+            function updateAnalogClock() {
+                var now = new Date();
+                var canvas = document.getElementById('analog-clock');
+                var ctx = canvas.getContext('2d');
+                var centerX = canvas.width / 2;
+                var centerY = canvas.height / 2;
+                var radius = canvas.width / 2 - 10;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+                ctx.lineWidth = 10;
+                ctx.strokeStyle = '#333';
+                ctx.stroke();
+                var hour = now.getHours() % 12;
+                var minute = now.getMinutes();
+                var second = now.getSeconds();
+                var hourAngle = (hour + minute / 60) * 30 * Math.PI / 180;
+                var minuteAngle = (minute + second / 60) * 6 * Math.PI / 180;
+                var secondAngle = second * 6 * Math.PI / 180;
+                // Hour hand
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(centerX + Math.cos(hourAngle) * (radius * 0.5), centerY + Math.sin(hourAngle) * (radius * 0.5));
+                ctx.lineWidth = 6;
+                ctx.strokeStyle = '#333';
+                ctx.stroke();
+                // Minute hand
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(centerX + Math.cos(minuteAngle) * (radius * 0.7), centerY + Math.sin(minuteAngle) * (radius * 0.7));
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = '#666';
+                ctx.stroke();
+                // Second hand
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(centerX + Math.cos(secondAngle) * (radius * 0.9), centerY + Math.sin(secondAngle) * (radius * 0.9));
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = 'red';
+                ctx.stroke();
+            }
+            updateAnalogClock(); // Initial call
+            setInterval(updateAnalogClock, 1000); // Update every second
+
+            // Show/Hide Email
+            $('#toggle-email').click(function() {
+                $('#email').toggle();
+            });
+
+            // Function to generate random numbers and set the question
+            function generateQuestion() {
+                var num1 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+                var num2 = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+                $("#question").text("What is " + num1 + " + " + num2 + "?");
+                return num1 + num2; // Return the correct answer
+            }
+
+            // Initial call to generate the question
+            var correctAnswer = generateQuestion();
+
+            // Check user's answer
+            $("#btn-check-answer").click(function() {
+                // Get user's answer
+                var userAnswer = parseInt($("#user-answer").val());
+                // Check if the answer is correct
+                if (userAnswer == correctAnswer) {
+                    $("#result-message").text("Correct!");
+                    $("#result-message").removeClass("text-danger").addClass("text-success");
+                } else {
+                    $("#result-message").text("Wrong! Please try again.");
+                    $("#result-message").removeClass("text-success").addClass("text-danger");
+                }
+                // Generate a new question
+                correctAnswer = generateQuestion();
+            });
+        });
+    </script>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <!-- Flag Counter -->
+        <div class="flag-counter">
+            <a href="https://info.flagcounter.com/5lv0"><img src="https://s01.flagcounter.com/count/5lv0/bg_EDEDED/txt_000000/border_0A090A/columns_3/maxflags_1/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+        </div>
+        <!-- Footer content -->
+        <div class="container">
+            <p id="welcome-footer-message"></p> <!-- Display welcome message here -->
+        </div>
+    </footer>
+    <!-- Custom JavaScript -->
+    <script>
+        $(document).ready(function() {
+            // Welcome Message with Cookies
+            var lastVisit = localStorage.getItem('lastVisit');
+            if (lastVisit) {
+                $('#welcome-footer-message').text('Welcome back! Your last visit was ' + lastVisit);
+            } else {
+                $('#welcome-footer-message').text('Welcome to my homepage!');
+            }
+            localStorage.setItem('lastVisit', new Date().toLocaleString());
+        });
+    </script>
+
+</body>
+
+</html>

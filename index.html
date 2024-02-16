@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* CSS for styling */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #4789cc;
+            padding: 20px 0;
+            position: fixed; /* Fixed position to keep it at the top */
+            width: 100%; /* Take full width of the viewport */
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+
+        header .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .nav-link {
+            color: #ffffff !important;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        header .nav-link:hover {
+            color: #007bff !important;
+        }
+
+        main {
+            padding-top: 100px; /* Adjusted padding to account for header height */
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        section h2 {
+            color: #545658;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .second-webpage {
+            text-align: center;
+            margin-top: 250px; /* Adjust as needed for vertical alignment */
+        }
+
+        .flag-counter {
+            position: absolute;
+            top: 120px; /* Adjust as needed based on your header height */
+            right: 20px;
+        }
+
+        .headshot-section {
+            margin-top: 100px; /* Adjust as needed for vertical alignment */
+        }
+
+        /* To style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            margin-top: 30px; /* Adjusted margin to create space between sections */
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            /*background-color: inherit;*/
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Changing background color of buttons on hover */
+        .tab button:hover {
+        background-color: #ddd;
+        }
+
+        /* Creating an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 200px; /* Add some margin at the bottom */
+        }
+
+        .left-info,
+        .right-info {
+            width: 25%; /* Adjust the width as needed */
+        }
+
+        .row {
+            margin-top: 30px; /* Adjust the value as needed to match the height of your header */
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <!-- Flag Counter -->
+    <div class="flag-counter">
+        <a href="https://info.flagcounter.com/5lv0"><img src="https://s01.flagcounter.com/count/5lv0/bg_EDEDED/txt_000000/border_0A090A/columns_3/maxflags_1/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+    </div>
+
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Ganesh Surisetty
+                    <img src="headshot.JPG" alt="Profile Picture" class="rounded-circle" style="width: 40px; height: 40px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#headshot">Headshot</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#resume">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#background">Background</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- About second web page-->
+        <section id="web-application-course" class="py-5">
+            <div class="container">
+                <div class="second-webpage">
+                    <h1>Hello! Welcome to My Profile Page!</h1>
+                    <p>Click on the link below to navigate to the "Web Application Programming and Hacking" page:</p>
+                    <p><a href="file:///Users/harshashetty/Documents/Masters%20in%20IT/Second%20Sem/Topics%20in%20CS/Personal%20Project%201/second_sample.html">Web Application Programming and Hacking</a></p>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- About Headshot -->
+        <section id="headshot" class="py-5 headshot-section">
+            <div class="container">
+                <h2>Headshot</h2>
+                <!-- My headshot is below -->
+                <img src="headshot.JPG" alt="Headshot" class="center-image" style="display: block; margin: 0 auto; width: 300px; height: auto;">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2>About Me</h2>
+                <!-- About me content here -->
+                <p>Hello! My name is Ganesh Surisetty. I am currently pursuing my masters in Information Technology at University of Cincinnati, Ohio.</p>
+                <ul>
+                <li>Throughout my academic and professional journey, I have developed skills in SQL and Java Scripts, Groovy Scripts.</li>
+                <li>I'm proficient in Python, C, SQL, HTML, and Groovy Scripts, and I have experience working on Oracle application such CCS and C2M where I have worked at Oracle and Wipro for three years.</li>
+                <li>I have a keen interest in learning new things useful for my career, apart from professional, I am very interested and good at sports like Badminton, Cricket, and Volleyball. I'm always a nature lover.</li>
+                <li>I'm excited to continue growing and expanding my knowledge in IT Field, and I'm actively seeking opportunities to contribute to innovative projects and make a positive impact.</li>
+            </ul>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="py-5 bg-light">
+            <div class="container">
+                <h2>Resume</h2>
+                <!-- Add buttons/links for viewing and downloading resume -->
+                <div class="resume-options text-center">
+                    <button class="btn btn-primary" onclick="viewResume()">View Resume</button>
+                    <hr>
+                    <a href="Ganesh_Surisetty.pdf" download="Ganesh_Surisetty.pdf" class="btn btn-primary">Download Resume</a>
+                </div>
+                <!-- Initially hide the resume image -->
+                <img id="resume-image" src="resume_image.png" alt="Resume" style="max-width: 100%; display: none;">
+            </div>
+        </section>
+
+        <script>
+            // Function to toggle the display of resume image
+            function viewResume() {
+                var resumeImage = document.getElementById("resume-image");
+                if (resumeImage.style.display === "none") {
+                    resumeImage.style.display = "block";
+                } else {
+                    resumeImage.style.display = "none";
+                }
+            }
+        </script>
+
+        <!-- Background Section -->
+        <section id="background" class="py-5">
+            <div class="container">
+                <h2>Background</h2>
+                <p><span style="font-size: 1.6em;">👇</span> Click on each tab to check complete information.</p>
+
+                <div class="row">
+                    <!-- Education -->
+                    <div class="col-md-6">
+                        <h3>Education</h3>
+                        <!-- Education content here -->
+
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'e1')">Graduation</button>
+                        </div>
+                          
+                        <div id="e1" class="tabcontent">
+                            <!-- Graduation -->
+                            <div>
+                                <p><b>Masters:</b> 4 cgpa</p>
+                                <li>Masters in IT, University of Cincinnati, Cincinnati, Ohio, US</li>
+                                <p></p>
+                            </div>
+                        </div>
+                          
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'e2')">Under graduation</button>
+                        </div>
+                          
+                        <div id="e2" class="tabcontent">
+                            <!-- Undergraduation -->
+                            <div>
+                                <p><b>Bachelors:</b> 9.12 cgpa</p>
+                                <li>Bachelors of Technology, Computer Science And Engineering, Gitam University, Visakhapatnam, Andhra Pradesh, India.</li>
+                                <p></p>
+                            </div>
+                        </div>
+                          
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'e3')">High School</button>
+                        </div>
+                          
+                        <div id="e3" class="tabcontent">
+                            <!-- Highschool -->
+                            <div>
+                                <p><b>Intermediate:</b> 9.4 cgpa</p>
+                                <li>Sri Chaitanya Junior College, Vijayawada, Andhra Pradesh, India</li>
+                                <p></p>
+                            </div>
+                            <div>
+                                <p><b>10th:</b> 9.5 cgpa</p>
+                                <li>Sri Gayatri High School, Visakhapatnam, Andhra Pradesh, India</li>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="col-md-6">
+                        <h3>Skills</h3>
+                        <!-- Skills content here -->
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 's1')">Programming skills</button>
+                        </div>
+                          
+                        <div id="s1" class="tabcontent">
+                            <!-- Programming Languages -->
+                            <div>
+                                <li>C, C++, MySQL</li>
+                                <li>Python, Javascript</li>
+                                <li>HTML, CSS, Java</li>
+                            </div>
+                        </div>
+                          
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 's2')">Professional skills</button>
+                        </div>
+                          
+                        <div id="s2" class="tabcontent">
+                            <!-- Operating Systems & Tools -->
+                            <div>   
+                                <li>Customer Cloud Service, SQL</li>
+                                <li>Customer Care and Billing, Groovy Scripts</li>
+                                <li>Java Script, C2M</li>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+
+
+                <div class="row">
+                    <!-- Experience -->
+                    <div class="col-md-6">
+                        <h3>Experience</h3>
+                        <!-- Experience content here -->
+    
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'p1')">Project 1</button>
+                        </div>
+                        
+                        <div id="p1" class="tabcontent">
+                            <!-- Project 1 -->
+                            <p><b>Staff Consultant, ORACLE Solution Services Private Limited, Hyderabad, Telangana MAY 2023 - AUG 2023</b></p>
+                            <li>Developed and maintained Oracle-based applications, specializing in Oracle services, including Customer Cloud Service and Customer to Meter mainly focusing on functional.</li>
+                            <li>Developed a plant watering system employing Servo motors, Moisture sensors, and Arduinos. Worked as a team lead for the billing module, played a key role in the generation and validation of bills, ensuring accuracy and compliance with bill rates for various Customer Information System (CIS) divisions. </li>
+                            <li>Lead and worked on test scripts, execution, and handling the defects for BHE using JIRA application. </li>
+                        </div>
+                        
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'p2')">Project 2</button>
+                        </div>
+                        
+                        <div id="p2" class="tabcontent">
+                            <!-- Project 2 -->
+                            <p><b>Project Engineer, Wipro Technologies, Hyderabad, Telangana, Client: ATCO N60 JAN 2022 - MAY 2023       </b>              </p>
+                            <li>Contributed as a key developer for ATCO N60, focusing on Oracle Customer Cloud Service and execution of modules such as Manage Billing, Credit & Collections, Accounting, Field Service, Requests, Meter Data, and Reports, aligning with ATCO's distinct business processes.</li>
+                            <li>* Played a pivotal role in the processing and handling of defect/tickets for ATCO N60 using JIRA application. Involved in the creation and generation of Reports that correspond to ATCO's particular business processes. </li>
+                        </div>
+
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'p3')">Project 3</button>
+                          </div>
+                          
+                          <div id="p3" class="tabcontent">
+                            <!-- Project 3 -->
+                            <p><b>Project Engineer, Wipro Technologies, Hyderabad, Telangana, Client: ATCO SEP 2020 - DEC 20</b></p>
+                            <li>Employed as a Software Developer on the Unit Testing module for Oracle Customer Cloud Service. Developed Java code, including Batches and Algorithms, to enhance the software's functionality and performance.</li>
+                            <li>Demonstrated strong analytical skills in creating and maintaining UTDs, contributing to effective unit testing processes.</li>
+                          </div>
+
+                    </div>
+
+                    <!-- Projects -->
+                    <div class="col-md-6">
+                        <h3>Projects</h3>
+                        <!-- Projects content here -->
+                          
+                          <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'p4')">Project 4</button>
+                          </div>
+                          
+                          <div id="p4" class="tabcontent">
+                            <!-- Project 4 -->
+                            <p><b>Data Analyst Intern - Internship, Coding Sastra, Visakhapatnam, AP APR 2019 - JUL 2019</b></p>
+                            <li>Served as an intern, where actively utilized SQL to extract, manipulate, and analyze extensive datasets from large databases. </li>
+                            <li>This role provided me with valuable practical experience in data handling and reporting, where contributed to data-driven decision-making processes.  </li>
+                          </div>
+                          
+                          <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'p5')">Project 5</button>
+                          </div>
+                          
+                          <div id="p5" class="tabcontent">
+                            <!-- Project 5 -->
+                            <p><b>Workshop Management System - Team Lead, GITAM University, Visakhapatnam, AP NOV 2019 - APR 2020 </b></p>
+                            <li>Led the design and development of a Workshop Management System, utilizing SQL database management to create an efficient platform for workshop sessions, events, room allocation and participant informatio </li>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            function openCity(evt, cityName) {
+                      var i, tabcontent, tablinks;
+                      tabcontent = document.getElementsByClassName("tabcontent");
+                      for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                      }
+                      tablinks = document.getElementsByClassName("tablinks");
+                      for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                      }
+                      document.getElementById(cityName).style.display = "block";
+                      evt.currentTarget.className += " active";
+                    }
+        </script>
+            
+        <!-- Contact Section -->
+        <section id="contact" class="py-5 bg-light">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <div class="left-info">
+                        <!-- Contact information on the left side -->
+                        <p>📞 (+1) 513 258 8493 </p>
+                        <p>📞 (+91) 799 720 5152 </p>
+                        <p>📧 surisettyganesh6@gmail.com</p>
+                    </div>
+                    <div class="right-info">
+                        <!-- Contact links on the right side -->
+                        <p>🔗 <a href="https://www.linkedin.com/in/ganesh-harsha-surisetty-39b8bb18b/">LinkedIn</a></p>
+                        <p>🐱 <a href="https://github.com/GaneshSurisetty">GitHub</a> </p>
+                        <p>📸 <a href="https://instagram.com/yourusername">Instagram</a> </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <!-- Footer content -->
+            <p id="welcome-footer-message"></p> <!-- Display welcome message here -->
+            &copy; 2024 Ganesh Surisetty | All rights reserved
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Your custom JavaScript code here -->
+    <script>
+        $(document).ready(function() {
+            // Welcome Message with Cookies
+            var lastVisit = localStorage.getItem('lastVisit');
+            if (lastVisit) {
+                $('#welcome-footer-message').text('Welcome back! Your last visit was ' + lastVisit);
+            } else {
+                $('#welcome-footer-message').text('Welcome to my homepage!');
+            }
+            localStorage.setItem('lastVisit', new Date().toLocaleString());
+        });
+    </script>
+    
+</body>
+</html>
